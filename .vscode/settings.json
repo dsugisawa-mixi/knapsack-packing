@@ -1,0 +1,103 @@
+{
+    "extensions.autoUpdate": false,
+    "explorer.confirmDelete": false,
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "pandoc.pdfOptString": "--pdf-engine=lualatex -V documentclass=ltjsarticle -V luatexjapresetoption=ms",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "toolchain",
+            "tools": [
+                "pLaTeX",
+                "pLaTeX",
+                "dvipdfmx",
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "name": "bibtex"
+        },
+        {
+            "command": "pbibtex",
+            "args": [
+                "-kanji=utf8",
+                "%DOCFILE%"
+            ],
+            "name": "pbibtex",
+        },
+        {
+            "name": "ptex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%"
+            ]
+        },
+        {
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-jobname=\"%DOCFILE%\"",
+                "-kanji=utf8",
+                "-guess-input-enc",
+                "%DOCFILE%.tex"
+            ],
+            "name": "pLaTeX"
+        },
+        {
+            "command": "dvipdfmx",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "name": "dvipdfmx"
+        }
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.log",
+        "*.synctex(busy)",
+        "*.dvi",
+        "*.synctex.gz",
+    ],
+    "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "markdown-pdf.orientation": "landscape",
+    "markdown-pdf.highlightStyle": "school-book.css",
+    "markdown-pdf.stylesRelativePathFile": true,
+    "markdown-pdf.styles": [
+        "./pdf.css"
+    ],
+    "markdown-pdf.headerTemplate": "<div style=\"font-size: 12px; margin-left: 2cm;\"> <span class='title'></span></div> <div style=\"font-size: 12px; margin-left: auto; margin-right: 2cm; \"></div>",
+    "markdown-pdf.footerTemplate": "<div style=\"font-size: 12px; margin-left: 2cm;\"><span>v0.0.1 : </span><span class='date'></span></div> <div style=\"font-size: 12px; font-size: 12px; margin-left: auto; margin-right: 2cm;  \"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+    "window.zoomLevel": 1,
+    "window.commandCenter": true,
+   
+}
